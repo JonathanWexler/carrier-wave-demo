@@ -1,0 +1,15 @@
+<%= form_for @user, :html => {:multipart => true} do |f| %>
+<p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+</p>
+<p>
+    <%= f.file_field :avatar %>
+</p>
+<p><%= f.submit %></p>
+<% end %>
+
+<% if @u %>
+<%= image_tag @u.avatar_url %>
+
+<% end %>
