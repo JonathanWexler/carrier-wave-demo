@@ -1,15 +1,18 @@
 class UsersController < ApplicationController
-  def new
-    @user = User.new
-  end
 
-  def create
-      puts params
-      @user = User.new
+    def index
+        @users = User.all
+    end
+    def new
+        @user = User.new
+    end
+
+    def create
+      # puts params
       @u = User.create(user_p)
       puts "HELLOOOOOOOO"
       puts @u
-      render :new
+      redirect_to users_path
   end
 
   private
